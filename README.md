@@ -1,16 +1,7 @@
-# CLONE SEOTools FROM [Artesaos](https://github.com/artesaos/seotools/blob/master/README.md)
+# CLONE SEOTools FROM [Artesaos](https://github.com/artesaos/seotools)
 
-SEOTools is a package for **Laravel 4.2** that provides helpers for some common SEO techniques.
+This is a clone from SEOTools [Artesaos](https://github.com/artesaos/seotools) but it can be used only for **Laravel 4.2** that provides helpers for some common SEO techniques.
 
-> Current Build Status
-
-[![Build Status](https://travis-ci.org/artesaos/seotools.svg)](https://travis-ci.org/artesaos/seotools)
-[![Code Climate](https://codeclimate.com/github/artesaos/seotools/badges/gpa.svg)](https://codeclimate.com/github/artesaos/seotools)
-[![Codacy Badge](https://www.codacy.com/project/badge/36bce2b4929e4f3387d26b8a26e5c667)](https://www.codacy.com/app/luiz-vinicius73/seotools)
-
-> Statistics
-
-[![Latest Stable Version](https://poser.pugx.org/artesaos/seotools/v/stable)](https://packagist.org/packages/artesaos/seotools) [![Total Downloads](https://poser.pugx.org/artesaos/seotools/downloads)](https://packagist.org/packages/artesaos/seotools) [![Latest Unstable Version](https://poser.pugx.org/artesaos/seotools/v/unstable)](https://packagist.org/packages/artesaos/seotools) [![License](https://poser.pugx.org/artesaos/seotools/license)](https://packagist.org/packages/artesaos/seotools)
 
 > Tips
 
@@ -25,7 +16,7 @@ SEOTools is a package for **Laravel 4.2** that provides helpers for some common 
 ### 1 - Dependency
 The first step is using composer to install the package and automatically update your `composer.json` file, you can do this by running:
 ```shell
-composer require artesaos/seotools
+composer require grouphub/seotools
 ```
 
 ### 2 - Provider
@@ -37,7 +28,7 @@ You need to update your application configuration in order to register the packa
 // file START ommited
     'providers' => [
         // other providers ommited
-        'Artesaos\SEOTools\Providers\SEOToolsServiceProvider',
+        'Grouphub\Seotools\Providers\SEOToolsServiceProvider',
     ],
 // file END ommited
 ```
@@ -47,7 +38,7 @@ Go to `/bootstrap/app.php` file and add this line:
 
 ```php
 // file START ommited
-	$app->register('Artesaos\SEOTools\Providers\SEOToolsServiceProvider');
+	$app->register('Grouphub\Seotools\Providers\SEOToolsServiceProvider');
 // file END ommited
 ```
 
@@ -61,11 +52,11 @@ In order to use the `SEOMeta` facade, you need to register it on the `config/app
 // file START ommited
     'aliases' => [
         // other Facades ommited
-        'SEOMeta'   => 'Artesaos\SEOTools\Facades\SEOMeta',
-        'OpenGraph' => 'Artesaos\SEOTools\Facades\OpenGraph',
-        'Twitter'   => 'Artesaos\SEOTools\Facades\TwitterCard',
+        'SEOMeta'   => 'Grouphub\Seotools\Facades\SEOMeta',
+        'OpenGraph' => 'Grouphub\Seotools\Facades\OpenGraph',
+        'Twitter'   => 'Grouphub\Seotools\Facades\TwitterCard',
         // or
-        'SEO' => 'Artesaos\SEOTools\Facades\SEOTools',
+        'SEO' => 'Grouphub\Seotools\Facades\SEOTools',
     ],
 // file END ommited
 ```
@@ -81,7 +72,7 @@ php artisan vendor:publish
 ```
 or
 ```shell
-php artisan vendor:publish --provider="Artesaos\SEOTools\Providers\SEOToolsServiceProvider"
+php artisan vendor:publish --provider="Grouphub\Seotools\Providers\SEOToolsServiceProvider"
 ```  
 
 > Lumen does not support this command, for it you should copy the file `src/resources/config/seotools.php` to `config/seotools.php` of your project
@@ -337,7 +328,7 @@ class CommomController extends Controller
 #### SEOTrait
 
 ```php
-use Artesaos\SEOTools\Traits\SEOTools as SEOToolsTrait;
+use Grouphub\Seotools\Traits\SEOTools as SEOToolsTrait;
 
 class CommomController extends Controller
 {
