@@ -1,11 +1,7 @@
 # CLONE SEOTools FROM [Artesaos](https://github.com/artesaos/seotools)
 
-This is a clone from SEOTools [Artesaos](https://github.com/artesaos/seotools) but it can be used only for **Laravel 4.2** that provides helpers for some common SEO techniques.
+This is a clone from SEOTools [Artesaos](https://github.com/artesaos/seotools) but it can be used only for **Laravel 4.2**.
 
-
-> Tips
-
-<a href="http://zenhub.io" target="_blank"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png" height="18px" alt="Powered by ZenHub"/></a>
 
 ## Features
 - friendly interface
@@ -30,15 +26,6 @@ You need to update your application configuration in order to register the packa
         // other providers ommited
         'Grouphub\Seotools\Providers\SEOToolsServiceProvider',
     ],
-// file END ommited
-```
-
-#### Lumen
-Go to `/bootstrap/app.php` file and add this line:
-
-```php
-// file START ommited
-	$app->register('Grouphub\Seotools\Providers\SEOToolsServiceProvider');
 // file END ommited
 ```
 
@@ -93,20 +80,6 @@ In `seotools.php` configuration file you can determine the properties of the def
 
 > Facades are not supported in Lumen.
 
-### Lumen Usage
-
-```php
-$seotools = app('seotools');
-$metatags = app('seotools.metatags');
-$twitter = app('seotools.twitter');
-$opengraph = app('seotools.opengraph');
-
-// The behavior is the same as the facade
-// --------
-
-echo app('seotools')->generate();
-
-```
 
 ### Meta tags Generator
 With **SEOMeta** you can create meta tags to the `head`
@@ -362,9 +335,7 @@ class CommomController extends Controller
 	{!! Twitter::generate() !!}
 	    <!-- OR -->
 	{!! SEO::generate() !!}
-
-	    <!-- LUMEN -->
-	{!! app('seotools')->generate() !!}
+	    
 </head>
 <body>
 
